@@ -159,7 +159,7 @@ shopping-site/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/shopping-site.git
+git clone https://github.com/sunny-raj-sah/MERN-Shopping-Site.git
 
 cd shopping-site
 ```
@@ -466,7 +466,7 @@ Add screenshots here.
 
 ```
 Home Page
-Screenshot 2026-06-27 084232.png
+ ![alt text](<Screenshot 2026-06-27 084232-1.png>)
 Products
 
 Product Details

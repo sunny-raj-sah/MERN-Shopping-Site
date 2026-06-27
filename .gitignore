@@ -1,0 +1,87 @@
+# ============================
+# Dependencies
+# ============================
+node_modules/
+**/node_modules/
+
+# ============================
+# Environment Variables
+# ============================
+.env
+.env.*
+!.env.example
+
+# ============================
+# Build Output
+# ============================
+dist/
+build/
+coverage/
+
+# ============================
+# Logs
+# ============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================
+# OS Files
+# ============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ============================
+# IDE / Editor
+# ============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================
+# Cache
+# ============================
+.cache/
+.parcel-cache/
+.eslintcache
+.vite/
+
+# ============================
+# Runtime Files
+# ============================
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ============================
+# Temporary Files
+# ============================
+tmp/
+temp/
+
+# ============================
+# Package Managers
+# ============================
+.npm
+.pnpm-store/
+.yarn/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# ============================
+# Test Output
+# ============================
+.nyc_output/
+
+# ============================
+# Optional
+# ============================
+*.local
