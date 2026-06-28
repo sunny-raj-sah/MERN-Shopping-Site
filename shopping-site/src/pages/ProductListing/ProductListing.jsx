@@ -1,3 +1,7 @@
+
+import { useEffect } from "react"; 
+import { useSearchParams } from "react-router-dom";
+
 import Navbar from "../../components/Navbar/Navbar";
 import FilterSidebar from "../../components/FilterSidebar/FilterSidebar";
 import ProductGrid from "../../components/ProductGrid/ProductGrid";
@@ -7,8 +11,19 @@ import { useSearch } from "../../context/SearchContext";
 import { filterProducts } from "../../utils/filterProducts";
 const ProductListing = () => {
 
-    const { state } = useProducts();
+    const { state , fetchProducts } = useProducts();
     
+const [searchParams] = useSearchParams();
+const category = searchParams.get("category");
+
+useEffect(() => { 
+  if (category) { 
+    fetchProducts(`?category=${category}`); 
+  } else { fetchProducts(); 
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } }, [category]);
+
 if (state.loading) {
   return (
     <>

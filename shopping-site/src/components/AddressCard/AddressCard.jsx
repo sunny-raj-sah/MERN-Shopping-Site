@@ -3,6 +3,7 @@ import { useAddress } from "../../context/AddressContext";
  const AddressCard = ({
   address,
   showActions = true,
+  onEdit,
 }) => {
   const {
     state: addressState,
@@ -77,8 +78,10 @@ import { useAddress } from "../../context/AddressContext";
         {showActions && (
   <div className="d-flex gap-2 mt-3">
 
-    <button className="btn btn-outline-primary">
-      Edit
+    <button className="btn btn-outline-primary"
+       onClick={() => onEdit(address)}
+    >
+     Edit 
     </button>
 
     <button

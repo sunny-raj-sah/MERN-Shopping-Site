@@ -5,7 +5,12 @@
 ) => {
   let filteredProducts = [...products];
 
-
+//brand
+  if (productState.selectedBrand.length > 0) {
+  filteredProducts = filteredProducts.filter((product) =>
+    productState.selectedBrand.includes(product.brand)
+  );
+}
   
   // Search
   if (searchValue.trim() !== "") {

@@ -26,6 +26,7 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     navigate("/login");
+  
   };
 
   return (
@@ -35,9 +36,18 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="navbar-brand fw-bold fs-3 text-secondary"
+          // className="navbar-brand fw-bold fs-3 text-secondary"
+            className="navbar-brand d-flex align-items-center fw-bold fs-3 text-dark"
         >
-          MyShoppingSite
+          <img
+    src="/Favicon-MP.png"
+    alt="MyShoppingSite Logo"
+    width="42"
+    height="42"
+    className="me-2 rounded-circle"
+  />
+
+  <span>MyShoppingSite</span>
         </Link>
 
         {/* Search */}

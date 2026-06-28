@@ -68,7 +68,11 @@ const ProductCard = ({ product }) => {
         <h5 className="fw-normal">
           {product.title}
         </h5>
-
+           <div className="mb-2">
+    <span className="badge bg-success px-3 py-2 fs-6">
+      ⭐ {product.rating}
+    </span>
+  </div>
         <h2 className="fw-bold">
           ₹{product.price}
         </h2>

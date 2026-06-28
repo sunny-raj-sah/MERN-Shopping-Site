@@ -1,7 +1,7 @@
  import {
   createContext,
   useContext,
-  useEffect,
+  // useEffect,
   useReducer,
 } from "react";
 
@@ -20,18 +20,18 @@ export const ProductProvider = ({ children }) => {
     initialProductState
   );
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/immutability
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   // eslint-disable-next-line react-hooks/immutability
+  //   fetchProducts();
+  // }, []);
 
-  const fetchProducts = async () => {
+  const fetchProducts = async (query = "") => {
     dispatch({
       type: "FETCH_PRODUCTS_REQUEST",
     });
 
     try {
-      const response = await getProducts();
+      const response = await getProducts(query);
 
       dispatch({
         type: "FETCH_PRODUCTS_SUCCESS",

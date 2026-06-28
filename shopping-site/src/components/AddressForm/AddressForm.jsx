@@ -1,20 +1,30 @@
 import { useState } from "react";
 import { useAddress } from "../../context/AddressContext";
 
-const AddressForm = ({ onClose }) => {
+const AddressForm = ({ onClose,editAddress = null, }) => {
   const { dispatch: addressDispatch } = useAddress();
 
-  const [formData, setFormData] = useState({
+  // const [formData, setFormData] = useState({
+  //   // eslint-disable-next-line react-hooks/purity
+  //   id: Date.now(),
+  //   name: "",
+  //   phone: "",
+  //   street: "",
+  //   city: "",
+  //   state: "",
+  //   country: "",
+  //   pincode: "",
+  // });
+  const [formData, setFormData] = useState( editAddress || { 
     // eslint-disable-next-line react-hooks/purity
     id: Date.now(),
-    name: "",
-    phone: "",
-    street: "",
-    city: "",
-    state: "",
-    country: "",
-    pincode: "",
-  });
+     name: "", 
+     phone: "",
+     street: "", 
+     city: "",
+     state: "", 
+     country: "", 
+     pincode: "", } );
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -29,7 +39,12 @@ const AddressForm = ({ onClose }) => {
     event.preventDefault();
 
     addressDispatch({
-      type: "ADD_ADDRESS",
+      // type: "ADD_ADDRESS",
+      // payload: formData,
+
+      type: editAddress
+       ? "UPDATE_ADDRESS" 
+      : "ADD_ADDRESS", 
       payload: formData,
     });
 
@@ -43,7 +58,9 @@ const AddressForm = ({ onClose }) => {
 
         <h4 className="mb-4">
 
-          Add New Address
+          {editAddress 
+          ? "Edit Address" 
+          : "Add New Address"}  
 
         </h4>
 
@@ -165,7 +182,9 @@ const AddressForm = ({ onClose }) => {
               className="btn btn-dark"
               type="submit"
             >
-              Save Address
+             {editAddress 
+             ? "Update Address" 
+             : "Save Address"}
             </button>
 
             <button

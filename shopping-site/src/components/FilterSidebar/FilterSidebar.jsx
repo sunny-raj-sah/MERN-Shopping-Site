@@ -226,30 +226,49 @@ const FilterSidebar = () => {
   // ==========================
   // Categories
   // ==========================
-  const categories = [
-    ...new Set(state.products.map((product) => product.category)),
-  ];
+  // const categories = [
+  //   ...new Set(state.products.map((product) => product.category)),
+  // ];
+const brands = [
+  ...new Set(state.products.map((product) => product.brand)),
+];
 
   // ==========================
   // Category Handler
   // ==========================
-  const handleCategoryChange = (category) => {
-    let updatedCategories = [...state.selectedCategory];
+  // const handleCategoryChange = (category) => {
+  //   let updatedCategories = [...state.selectedCategory];
 
-    if (updatedCategories.includes(category)) {
-      updatedCategories = updatedCategories.filter(
-        (item) => item !== category
-      );
-    } else {
-      updatedCategories.push(category);
-    }
+  //   if (updatedCategories.includes(category)) {
+  //     updatedCategories = updatedCategories.filter(
+  //       (item) => item !== category
+  //     );
+  //   } else {
+  //     updatedCategories.push(category);
+  //   }
 
-    dispatch({
-      type: "SET_CATEGORY",
-      payload: updatedCategories,
-    });
-  };
+  //   dispatch({
+  //     type: "SET_CATEGORY",
+  //     payload: updatedCategories,
+  //   });
+  // };
 
+  const handleBrandChange = (brand) => {
+  let updatedBrands = [...state.selectedBrand];
+
+  if (updatedBrands.includes(brand)) {
+    updatedBrands = updatedBrands.filter(
+      (item) => item !== brand
+    );
+  } else {
+    updatedBrands.push(brand);
+  }
+
+  dispatch({
+    type: "SET_BRAND",
+    payload: updatedBrands,
+  });
+};
   return (
     <div
       className="bg-white border-end sticky-top p-4"
@@ -282,20 +301,23 @@ const FilterSidebar = () => {
       <div className="mb-5">
         <h5 className="fw-bold mb-3">Shop by Category</h5>
 
-        {categories.map((category) => (
+        {/* {categories.map((category) => ( */}
+             {brands.map((brand) => (
           <div
             className="form-check mb-2"
-            key={category}
+            key={brand}
           >
             <input
               className="form-check-input"
               type="checkbox"
-              checked={state.selectedCategory.includes(category)}
-              onChange={() => handleCategoryChange(category)}
+              // checked={state.selectedCategory.includes(category)}
+              checked={state.selectedBrand.includes(brand)}
+              onChange={() => handleBrandChange(brand)}
+              // onChange={() => handleCategoryChange(category)}
             />
 
             <label className="form-check-label">
-              {category}
+              {brand}
             </label>
           </div>
         ))}

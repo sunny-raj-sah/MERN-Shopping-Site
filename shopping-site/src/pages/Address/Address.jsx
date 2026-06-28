@@ -10,7 +10,12 @@ const Address = () => {
   const { state: addressState } = useAddress();
 
   const [showForm, setShowForm] = useState(false);
+const [editingAddress, setEditingAddress] = useState(null);
 
+
+const handleEdit = (address) => {
+   setEditingAddress(address);
+    setShowForm(true); };
   return (
     <>
       <Navbar />
@@ -23,7 +28,8 @@ const Address = () => {
 
           <button
             className="btn btn-dark"
-            onClick={() => setShowForm(true)}
+            // onClick={() => setShowForm(true)}
+            onClick={() => { setEditingAddress(null); setShowForm(true); }}
           >
             + Add New Address
           </button>
@@ -32,7 +38,11 @@ const Address = () => {
 
         {showForm && (
           <AddressForm
-            onClose={() => setShowForm(false)}
+            // onClose={() => setShowForm(false)}
+            editAddress={editingAddress} 
+            onClose={() => {
+               setShowForm(false); 
+              setEditingAddress(null); }}
           />
         )}
 
@@ -52,8 +62,11 @@ const Address = () => {
 
           addressState.addresses.map((address) => (
             <AddressCard
+              // key={address.id}
+              // address={address}
               key={address.id}
-              address={address}
+               address={address}
+              onEdit={handleEdit}
             />
           ))
 

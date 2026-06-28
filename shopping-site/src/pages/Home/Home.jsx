@@ -48,7 +48,7 @@ const Home = () => {
             <div className="col-lg col-md-4 col-6" key={category.id}>
 
               <Link
-                to="/products"
+                to={`/products?category=${category.name}`}
                 className="text-decoration-none text-dark"
               >
 

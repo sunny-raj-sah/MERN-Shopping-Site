@@ -7,7 +7,7 @@ export const initialProductState = {
 
   selectedCategory: [],
   selectedSubCategory: [],
-
+selectedBrand: [],
   selectedRating: 0,
 
   selectedPrice: 120000,
@@ -59,6 +59,7 @@ export const productReducer = (state, action) => {
     search: "",
     selectedCategory: [],
     selectedSubCategory: [],
+    selectedBrand: [],
     selectedRating: 0,
     selectedPrice: 120000,
     sortBy: "",
@@ -106,7 +107,11 @@ case "SET_SUBCATEGORY":
     selectedSubCategory: action.payload,
   };
 
-  
+  case "SET_BRAND":
+  return {
+    ...state,
+    selectedBrand: action.payload,
+  };
   
     default:
       return state;

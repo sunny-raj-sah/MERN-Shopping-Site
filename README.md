@@ -460,13 +460,13 @@ React UI
 
 ---
 
-# 📸 Screenshots
+# Pages
 
-Add screenshots here.
+ 
 
 ```
 Home Page
- ![alt text](<Screenshot 2026-06-27 084232-1.png>)
+ 
 Products
 
 Product Details

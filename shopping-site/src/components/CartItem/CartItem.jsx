@@ -79,7 +79,7 @@ const CartItem = ({ product }) => {
 
                         <p className="text-decoration-line-through text-secondary">
 
-                            ₹{product.originalPrice}
+                            {/* ₹{product.originalPrice} */}
 
                         </p>
 
