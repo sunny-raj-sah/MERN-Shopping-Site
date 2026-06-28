@@ -5,7 +5,7 @@ import AddressCard from "../../components/AddressCard/AddressCard";
 import AddressForm from "../../components/AddressForm/AddressForm";
 
 import { useAddress } from "../../context/AddressContext";
-
+import { toast } from "react-toastify";
 const Address = () => {
   const { state: addressState } = useAddress();
 
@@ -15,6 +15,7 @@ const [editingAddress, setEditingAddress] = useState(null);
 
 const handleEdit = (address) => {
    setEditingAddress(address);
+       toast.success("Edit the address");
     setShowForm(true); };
   return (
     <>
@@ -29,7 +30,10 @@ const handleEdit = (address) => {
           <button
             className="btn btn-dark"
             // onClick={() => setShowForm(true)}
-            onClick={() => { setEditingAddress(null); setShowForm(true); }}
+            onClick={() => { setEditingAddress(null); setShowForm(true);
+
+               toast.success("Add new Adress");
+             }}
           >
             + Add New Address
           </button>

@@ -1,5 +1,7 @@
  import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 import Navbar from "../../components/Navbar/Navbar";
 import AddressCard from "../../components/AddressCard/AddressCard";
@@ -38,7 +40,11 @@ const Checkout = () => {
 
           <button
             className="btn btn-dark mt-3"
-            onClick={() => navigate("/products")}
+            onClick={() =>
+               navigate("/products")
+               
+              
+            }
           >
             Continue Shopping
           </button>
@@ -88,6 +94,7 @@ const Checkout = () => {
       type: "PLACE_ORDER",
       payload: order,
     });
+     toast.success("Order placed successfully!");
 
     cartDispatch({
       type: "CLEAR_CART",

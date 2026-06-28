@@ -216,9 +216,8 @@
 
 // export default FilterSidebar;
 
-
 // ------------------------------------------------
-  import { useProducts } from "../../context/ProductContext";
+import { useProducts } from "../../context/ProductContext";
 
 const FilterSidebar = () => {
   const { state, dispatch } = useProducts();
@@ -229,9 +228,7 @@ const FilterSidebar = () => {
   // const categories = [
   //   ...new Set(state.products.map((product) => product.category)),
   // ];
-const brands = [
-  ...new Set(state.products.map((product) => product.brand)),
-];
+  const brands = [...new Set(state.products.map((product) => product.brand))];
 
   // ==========================
   // Category Handler
@@ -254,21 +251,19 @@ const brands = [
   // };
 
   const handleBrandChange = (brand) => {
-  let updatedBrands = [...state.selectedBrand];
+    let updatedBrands = [...state.selectedBrand];
 
-  if (updatedBrands.includes(brand)) {
-    updatedBrands = updatedBrands.filter(
-      (item) => item !== brand
-    );
-  } else {
-    updatedBrands.push(brand);
-  }
+    if (updatedBrands.includes(brand)) {
+      updatedBrands = updatedBrands.filter((item) => item !== brand);
+    } else {
+      updatedBrands.push(brand);
+    }
 
-  dispatch({
-    type: "SET_BRAND",
-    payload: updatedBrands,
-  });
-};
+    dispatch({
+      type: "SET_BRAND",
+      payload: updatedBrands,
+    });
+  };
   return (
     <div
       className="bg-white border-end sticky-top p-4"
@@ -302,11 +297,8 @@ const brands = [
         <h5 className="fw-bold mb-3">Shop by Category</h5>
 
         {/* {categories.map((category) => ( */}
-             {brands.map((brand) => (
-          <div
-            className="form-check mb-2"
-            key={brand}
-          >
+        {brands.map((brand) => (
+          <div className="form-check mb-2" key={brand}>
             <input
               className="form-check-input"
               type="checkbox"
@@ -316,9 +308,7 @@ const brands = [
               // onChange={() => handleCategoryChange(category)}
             />
 
-            <label className="form-check-label">
-              {brand}
-            </label>
+            <label className="form-check-label">{brand}</label>
           </div>
         ))}
       </div>
@@ -333,9 +323,7 @@ const brands = [
         <div className="d-flex justify-content-between small text-muted">
           <span>₹0</span>
 
-          <span>
-            ₹{state.selectedPrice.toLocaleString()}
-          </span>
+          <span>₹{state.selectedPrice.toLocaleString()}</span>
 
           <span>₹120000</span>
         </div>
@@ -377,16 +365,11 @@ const brands = [
             }
           />
 
-          <label className="form-check-label">
-            All Ratings
-          </label>
+          <label className="form-check-label">All Ratings</label>
         </div>
 
         {[4, 3, 2, 1].map((rating) => (
-          <div
-            className="form-check mb-2"
-            key={rating}
-          >
+          <div className="form-check mb-2" key={rating}>
             <input
               className="form-check-input"
               type="radio"
@@ -400,9 +383,7 @@ const brands = [
               }
             />
 
-            <label className="form-check-label">
-              {rating} ★ & Above
-            </label>
+            <label className="form-check-label">{rating} ★ & Above</label>
           </div>
         ))}
       </div>
@@ -428,9 +409,7 @@ const brands = [
             }
           />
 
-          <label className="form-check-label">
-            Price : Low to High
-          </label>
+          <label className="form-check-label">Price : Low to High</label>
         </div>
 
         <div className="form-check">
@@ -447,9 +426,7 @@ const brands = [
             }
           />
 
-          <label className="form-check-label">
-            Price : High to Low
-          </label>
+          <label className="form-check-label">Price : High to Low</label>
         </div>
       </div>
     </div>

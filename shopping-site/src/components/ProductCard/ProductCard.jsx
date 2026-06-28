@@ -1,27 +1,19 @@
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { useWishlist } from "../../context/WishlistContext";
 import { useCart } from "../../context/CartContext";
 
 const ProductCard = ({ product }) => {
-  const {
-    state: wishlistState,
-    addWishlist,
-    removeWishlist,
-  } = useWishlist();
+  const { state: wishlistState, addWishlist, removeWishlist } = useWishlist();
 
-  const {
-    state: cartState,
-    dispatch: cartDispatch,
-  } = useCart();
+  const { state: cartState, dispatch: cartDispatch } = useCart();
 
   const isWishlist = wishlistState.wishlist.some(
-    (item) => item._id === product._id
+    (item) => item._id === product._id,
   );
 
-  const isCart = cartState.cart.some(
-    (item) => item._id === product._id
-  );
+  const isCart = cartState.cart.some((item) => item._id === product._id);
 
   // ==========================
   // Wishlist Handler
@@ -29,8 +21,10 @@ const ProductCard = ({ product }) => {
   const handleWishlist = async () => {
     if (isWishlist) {
       await removeWishlist(product._id);
+      toast.success("Removed product from wishlist");
     } else {
       await addWishlist(product._id);
+      toast.success("Added product from wishlist");
     }
   };
 
@@ -56,45 +50,37 @@ const ProductCard = ({ product }) => {
         >
           <i
             className={`bi ${
-              isWishlist
-                ? "bi-heart-fill text-danger"
-                : "bi-heart"
+              isWishlist ? "bi-heart-fill text-danger" : "bi-heart"
             } fs-5`}
           ></i>
         </button>
       </div>
 
       <div className="card-body text-center">
-        <h5 className="fw-normal">
-          {product.title}
-        </h5>
-           <div className="mb-2">
-    <span className="badge bg-success px-3 py-2 fs-6">
-      ⭐ {product.rating}
-    </span>
-  </div>
-        <h2 className="fw-bold">
-          ₹{product.price}
-        </h2>
+        <h5 className="fw-normal">{product.title}</h5>
+        <div className="mb-2">
+          <span className="badge bg-success px-3 py-2 fs-6">
+            ⭐ {product.rating}
+          </span>
+        </div>
+        <h2 className="fw-bold">₹{product.price}</h2>
       </div>
 
       <div className="card-footer bg-white border-0 p-0">
         {isCart ? (
-          <Link
-            to="/cart"
-            className="btn btn-primary w-100 rounded-0"
-          >
+          <Link to="/cart" className="btn btn-primary w-100 rounded-0">
             Go To Cart
           </Link>
         ) : (
           <button
             className="btn btn-secondary w-100 rounded-0"
-            onClick={() =>
+            onClick={() => {
               cartDispatch({
                 type: "ADD_TO_CART",
                 payload: product,
-              })
-            }
+              });
+              toast.success("ADD_TO_CART successfully");
+            }}
           >
             Add To Cart
           </button>

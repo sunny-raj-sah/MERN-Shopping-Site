@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAddress } from "../../context/AddressContext";
-
+import { toast } from "react-toastify";
 const AddressForm = ({ onClose,editAddress = null, }) => {
   const { dispatch: addressDispatch } = useAddress();
 
@@ -43,11 +43,16 @@ const AddressForm = ({ onClose,editAddress = null, }) => {
       // payload: formData,
 
       type: editAddress
-       ? "UPDATE_ADDRESS" 
+       ? "UPDATE_ADDRESS"  
       : "ADD_ADDRESS", 
       payload: formData,
     });
 
+     toast.success(
+    editAddress
+      ? "Address updated successfully"
+      : "Address added successfully"
+  );
     onClose();
   };
 
@@ -185,6 +190,8 @@ const AddressForm = ({ onClose,editAddress = null, }) => {
              {editAddress 
              ? "Update Address" 
              : "Save Address"}
+
+               
             </button>
 
             <button

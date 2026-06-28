@@ -40,20 +40,14 @@ const Home = () => {
       <Navbar />
 
       <div className="container py-5">
-
         <div className="row g-4 mb-5">
-
           {categories.map((category) => (
-
             <div className="col-lg col-md-4 col-6" key={category.id}>
-
               <Link
                 to={`/products?category=${category.name}`}
                 className="text-decoration-none text-dark"
               >
-
                 <div className="card border-0 shadow-sm">
-
                   <img
                     src={category.image}
                     className="card-img-top"
@@ -64,74 +58,97 @@ const Home = () => {
                   />
 
                   <div className="card-body text-center py-2">
-
-                    <h6 className="fw-semibold mb-0">
-                      {category.name}
-                    </h6>
-
+                    <h6 className="fw-semibold mb-0">{category.name}</h6>
                   </div>
-
                 </div>
-
               </Link>
-
             </div>
-
           ))}
-
         </div>
 
         <div
-          className="bg-secondary-subtle rounded mb-5"
+          className="rounded overflow-hidden position-relative mb-5"
           style={{ height: "500px" }}
-        ></div>
+        >
+          <img
+            src="/images/hero-banner.png"
+            alt="Hero Banner"
+            className="w-100 h-100"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          {/* hero section */}
+          <div
+            className="position-absolute top-50 start-0 translate-middle-y ps-5"
+            style={{ maxWidth: "500px" }}
+          >
+            <span className="badge bg-dark mb-3 fs-6">New Collection 2026</span>
 
-        <div className="row g-4">
+            <h1 className="display-4 fw-bold">
+              Discover Your
+              <br />
+              Perfect Style
+            </h1>
 
-          {[1, 2].map((item) => (
+            <p className="lead text-secondary">
+              Shop premium fashion, electronics and home essentials with
+              exciting offers.
+            </p>
 
-            <div className="col-lg-6" key={item}>
-
-              <div className="card border-0 bg-secondary-subtle p-4">
-
-                <div className="row align-items-center">
-
-                  <div className="col-4">
-
-                    <div
-                      className="bg-white rounded"
-                      style={{ height: "170px" }}
-                    ></div>
-
-                  </div>
-
-                  <div className="col-8">
-
-                    <small className="text-uppercase">
-                      New Arrivals
-                    </small>
-
-                    <h2 className="fw-bold mt-4">
-                      Summer Collection
-                    </h2>
-
-                    <p className="mb-0">
-                      Check out our best winter collection to stay
-                      warm in style this season.
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          ))}
-
+            <Link to="/products" className="btn btn-dark btn-lg px-5 mt-2">
+              Shop Now
+            </Link>
+          </div>
         </div>
 
+        <div className="row g-4">
+          {[1, 2].map((item) => (
+            <div className="col-lg-6" key={item}>
+              <div className="card border-0 bg-secondary-subtle p-4">
+                <div className="row align-items-center">
+                  <div className="col-4">
+                    <img
+                      src={
+                        item === 1
+                          ? "public/images/new-arrival.png"
+                          : "public/images/summer-collection.png"
+                      }
+                      className="img-fluid rounded"
+                      alt=""
+                      style={{
+                        height: "170px",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+
+                  <small className="text-uppercase text-muted">
+                    {item === 1 ? "Summer Sale" : "New Arrivals"}
+                  </small>
+
+                  <h2 className="fw-bold mt-3">
+                    {item === 1 ? "Summer Collection" : "Latest Fashion"}
+                  </h2>
+
+                  <p className="text-secondary">
+                    {item === 1
+                      ? "Refresh your wardrobe with stylish summer outfits at exclusive discounts."
+                      : "Explore the newest arrivals in fashion, footwear and accessories  at exclusive discounts."}
+                  </p>
+
+                  <Link
+                    to={item === 1 ? "/products?category=Women" : "/products"}
+                    className="btn btn-dark mt-2"
+                  >
+                    Shop Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
