@@ -229,7 +229,10 @@ const FilterSidebar = () => {
   //   ...new Set(state.products.map((product) => product.category)),
   // ];
   const brands = [...new Set(state.products.map((product) => product.brand))];
-
+const maxPrice = Math.max(
+  ...state.products.map((product) => product.price),
+  0
+);
   // ==========================
   // Category Handler
   // ==========================
@@ -325,14 +328,15 @@ const FilterSidebar = () => {
 
           <span>₹{state.selectedPrice.toLocaleString()}</span>
 
-          <span>₹120000</span>
+          {/* <span>₹120000</span> */}
+          <span>₹{maxPrice.toLocaleString()}</span>
         </div>
 
         <input
           className="form-range mt-2"
           type="range"
           min="0"
-          max="120000"
+          max={maxPrice}
           step="1000"
           value={state.selectedPrice}
           onChange={(e) =>

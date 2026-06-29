@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import { useEffect, useRef } from "react";
 import { useSearch } from "../../context/SearchContext";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
@@ -15,11 +15,20 @@ const Navbar = () => {
   const { state: wishlistState } = useWishlist();
 
   const { state: authState, logout } = useAuth();
-
+const searchInputRef = useRef(null);
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
+
+  
+  useEffect(() => {
+  if (state.search.trim()) {
+    requestAnimationFrame(() => {
+      searchInputRef.current?.focus();
+    });
+  }
+}, [state.search]);
 
   return (
     <nav className="navbar navbar-expand-lg bg-light border-bottom py-3">
@@ -49,15 +58,20 @@ const Navbar = () => {
             </span>
 
             <input
+              ref={searchInputRef}
               type="text"
               className="form-control"
               placeholder="Search Products..."
               value={state.search}
-              onChange={(e) =>
+              onChange={(e) =>{
                 dispatch({
                   type: "SET_SEARCH",
                   payload: e.target.value,
                 })
+                
+
+
+              }
               }
             />
           </div>
