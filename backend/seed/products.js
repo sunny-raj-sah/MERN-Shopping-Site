@@ -7,7 +7,7 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1517336714739-489689fd1ca8",
     category: "Laptop",
-    price: 114999,
+    price: 114000,
     rating: 3,
     stock: 15,
     featured: true,
