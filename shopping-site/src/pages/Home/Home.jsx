@@ -101,54 +101,69 @@ const Home = () => {
             </Link>
           </div>
         </div>
+            
 
-        <div className="row g-4">
-          {[1, 2].map((item) => (
-            <div className="col-lg-6" key={item}>
-              <div className="card border-0 bg-secondary-subtle p-4">
-                <div className="row align-items-center">
-                  <div className="col-4">
-                    <img
-                      src={
-                        item === 1
-                          ? "public/images/new-arrival.png"
-                          : "public/images/summer-collection.png"
-                      }
-                      className="img-fluid rounded"
-                      alt=""
-                      style={{
-                        height: "170px",
-                        width: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
 
-                  <small className="text-uppercase text-muted">
-                    {item === 1 ? "Summer Sale" : "New Arrivals"}
-                  </small>
+{/* 
+            //summer collection and latest fashion */}
 
-                  <h2 className="fw-bold mt-3">
-                    {item === 1 ? "Summer Collection" : "Latest Fashion"}
-                  </h2>
-
-                  <p className="text-secondary">
-                    {item === 1
-                      ? "Refresh your wardrobe with stylish summer outfits at exclusive discounts."
-                      : "Explore the newest arrivals in fashion, footwear and accessories  at exclusive discounts."}
-                  </p>
-
-                  <Link
-                    to={item === 1 ? "/products?category=Women" : "/products"}
-                    className="btn btn-dark mt-2"
-                  >
-                    Shop Now
-                  </Link>
-                </div>
-              </div>
+            <div className="row g-4">
+  {[1, 2].map((item) => (
+    <div className="col-lg-6" key={item}>
+      <div className="card border-0 bg-secondary-subtle h-100">
+        <div className="card-body">
+          <div className="row align-items-center">
+            
+            {/* Image */}
+            <div className="col-4">
+              <img
+                src={
+                  item === 1
+                    ? "/images/new-arrival.png"
+                    : "/images/summer-collection.png"
+                }
+                className="img-fluid rounded"
+                alt=""
+                style={{
+                  height: "170px",
+                  width: "100%",
+                  objectFit: "cover",
+                }}
+              />
             </div>
-          ))}
+
+            {/* Content */}
+            <div className="col-8">
+              <small className="text-uppercase text-muted">
+                {item === 1 ? "Summer Sale" : "New Arrivals"}
+              </small>
+
+              <h2 className="fw-bold mt-2">
+                {item === 1
+                  ? "Summer Collection"
+                  : "Latest Fashion"}
+              </h2>
+
+              <p className="text-secondary mb-3">
+                {item === 1
+                  ? "Refresh your wardrobe with stylish summer outfits at exclusive discounts."
+                  : "Explore the newest arrivals in fashion, footwear and accessories at exclusive discounts."}
+              </p>
+
+              <Link
+                to={item === 1 ? "/products?category=Women" : "/products"}
+                className="btn btn-dark"
+              >
+                Shop Now
+              </Link>
+            </div>
+
+          </div>
         </div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </>
   );

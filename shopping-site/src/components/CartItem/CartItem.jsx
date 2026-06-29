@@ -15,10 +15,10 @@ const CartItem = ({ product }) => {
   const handleWishlist = async () => {
     if (isWishlist) {
       await removeWishlist(product._id);
-      toast.success("remove the product from the wishlist");
+      toast.success("Product removed from wishlist");
     } else {
       await addWishlist(product._id);
-      toast.success("remove the product from the wishlist");
+      toast.success( "Product added to wishlist.");
     }
   };
   return (
@@ -60,7 +60,7 @@ const CartItem = ({ product }) => {
 
                     payload: product._id,
                   });
-                  toast.success("DECREASE_QUANTITY ");
+                  toast.success("decrease quantity successfully");
                 }}
               >
                 -
@@ -76,7 +76,7 @@ const CartItem = ({ product }) => {
 
                     payload: product._id,
                   });
-                  toast.success("INCREASE_QUANTITY");
+                  toast.success("increase quantity successfully");
                 }}
               >
                 +
@@ -92,7 +92,7 @@ const CartItem = ({ product }) => {
 
                     payload: product._id,
                   });
-                  toast.success("REMOVE_FROM_CART");
+                  toast.success("remove from cart successfully");
                 }}
               >
                 Remove From Cart

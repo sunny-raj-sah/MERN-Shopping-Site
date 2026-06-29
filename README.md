@@ -1,94 +1,207 @@
-# 🛍️ MERN Shopping Site
+ # 🛍️ Trendora
 
-A full-stack e-commerce web application built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js). The application provides a modern shopping experience with secure authentication, product browsing, advanced filtering, wishlist management, shopping cart functionality, and responsive design.
+A modern **Full-Stack E-Commerce Web Application** built with the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**. Trendora provides a seamless online shopping experience with secure authentication, product browsing, advanced filtering, wishlist management, shopping cart, address management, checkout, order tracking, and a fully responsive user interface.
 
 ---
 
 # 🚀 Live Demo
 
-### Frontend
+### 🌐 Frontend
 
-```
-https://your-frontend-url.vercel.app
-```
+https://mern-shopping-site-43xo.vercel.app/
 
-### Backend API
+### ⚙️ Backend API
 
-```
-https://your-backend-url.onrender.com
-```
+https://mern-shopping-site.vercel.app/api
 
 ---
 
 # 📌 Features
 
-## User Authentication
+## 🔐 Authentication
 
-* User Registration
-* User Login
-* JWT Authentication
-* Protected Routes
-* Persistent Login
-* Logout
-
----
-
-## Products
-
-* View All Products
-* Product Details Page
-* Product Search
-* Dynamic Product Listing
-* Featured Products
-* Responsive Product Cards
+- User Registration
+- User Login
+- JWT Authentication
+- Secure Token Storage
+- Persistent Login
+- Logout
+- Protected Routes
+- Automatic Redirection for Unauthorized Users
 
 ---
 
-## Product Filters
+## 🏠 Home Page
 
-* Search Products
-* Filter by Category
-* Filter by Rating
-* Filter by Price Range
-* Sort by Price
-
-  * Low to High
-  * High to Low
-* Clear All Filters
-
----
-
-## Wishlist
-
-* Add Product to Wishlist
-* Remove Product from Wishlist
-* Persistent Wishlist
-* Wishlist Count
+- Modern Hero Banner
+- Featured Categories
+- Category Navigation
+- New Arrival Collections
+- Responsive Navigation Bar
+- Global Search Bar
+- Footer
+- Fully Responsive Layout
 
 ---
 
-## Cart
+## 🛒 Products
 
-* Add to Cart
-* Remove from Cart
-* Increase Quantity
-* Decrease Quantity
-* Price Calculation
-* Total Items
-* Total Price
-* Discount Calculation
+- View All Products
+- Dynamic Product Listing
+- Product Details Page
+- Featured Products
+- Responsive Product Cards
+- Product Rating Display
+- Brand Information
+- Category & Subcategory Information
 
 ---
 
-## User Interface
+## 🔍 Search & Filtering
 
-* Responsive Design
-* Bootstrap 5
-* React Router
-* Sticky Filter Sidebar
-* Modern Product Cards
-* Loading States
-* Error Handling
+- Global Product Search
+- Filter by Brand
+- Filter by Category
+- Filter by Subcategory
+- Filter by Rating
+- Filter by Price Range
+- Sort by Price (Low → High)
+- Sort by Price (High → Low)
+- Clear All Filters
+- URL-Based Category Navigation
+
+---
+
+## ❤️ Wishlist
+
+- Add Product to Wishlist
+- Remove Product from Wishlist
+- Wishlist Counter
+- Empty Wishlist Screen
+- Move Products Between Wishlist and Cart
+- Persistent Wishlist
+
+---
+
+## 🛍️ Shopping Cart
+
+- Add Product to Cart
+- Remove Product from Cart
+- Increase Quantity
+- Decrease Quantity
+- Prevent Quantity Below One
+- Cart Item Counter
+- Price Summary
+- Total Items Calculation
+- Total Price Calculation
+- Empty Cart Screen
+- Continue Shopping Button
+
+---
+
+## 📍 Address Management
+
+- Add New Address
+- Edit Existing Address
+- Delete Address
+- Select Delivery Address
+- Multiple Address Support
+- Address Validation
+- Reusable Address Form Component
+
+---
+
+## 💳 Checkout
+
+- Delivery Address Selection
+- Order Summary
+- Cart Item Review
+- Total Price Calculation
+- Total Item Calculation
+- Place Order
+- Clear Cart After Successful Order
+- Order Success Page
+
+---
+
+## 📦 Order Management
+
+- Place Order
+- Order History
+- Order Summary
+- Purchased Products
+- Delivery Address Details
+- Order Date & Time
+- Total Amount
+- Total Items Purchased
+
+---
+
+## 👤 User Profile
+
+- Personal Information
+- Order History
+- Address Management
+- Tab-Based Navigation
+
+---
+
+## 🔔 Toast Notifications
+
+The application provides instant feedback using **React Toastify** for all important user actions.
+
+Notifications include:
+
+- Product Added to Cart
+- Product Removed from Cart
+- Cart Quantity Increased
+- Cart Quantity Decreased
+- Product Added to Wishlist
+- Product Removed from Wishlist
+- Product Moved from Cart to Wishlist
+- Product Moved from Wishlist to Cart
+- Address Added
+- Address Updated
+- Address Deleted
+- Delivery Address Selected
+- Order Placed Successfully
+- Login Successful
+- Registration Successful
+- Logout Successful
+
+---
+
+## 🛣️ Routing
+
+- Home
+- Products
+- Product Details
+- Wishlist
+- Cart
+- Checkout
+- Address
+- Profile
+- Order Success
+- Login
+- Register
+- 404 Not Found
+- Protected Routes
+
+---
+
+## 📱 User Experience
+
+- Responsive Design
+- Mobile-Friendly UI
+- Bootstrap 5 Components
+- Bootstrap Icons
+- Sticky Filter Sidebar
+- Dynamic Badge Counters
+- Loading States
+- Error Handling
+- Empty State Screens
+- Clean UI
+- Reusable Components
 
 ---
 
@@ -96,45 +209,47 @@ https://your-backend-url.onrender.com
 
 ## Frontend
 
-* React.js
-* Vite
-* React Router DOM
-* Context API
-* useReducer
-* Axios
-* Bootstrap 5
-* Bootstrap Icons
+- React.js
+- Vite
+- React Router DOM
+- Context API
+- useReducer
+- Axios
+- Bootstrap 5
+- Bootstrap Icons
+- React Toastify
 
 ---
 
 ## Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
-* bcryptjs
-* dotenv
-* cors
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcryptjs
+- dotenv
+- cors
 
 ---
 
 # 📂 Project Structure
 
-```
-shopping-site/
+```text
+MERN-Shopping-Site/
 │
-├── frontend/
+├── shopping-site/
+│   ├── public/
 │   ├── src/
 │   │
+│   ├── api/
+│   ├── assets/
 │   ├── components/
 │   ├── context/
-│   ├── reducers/
 │   ├── pages/
-│   ├── api/
+│   ├── reducers/
 │   ├── utils/
-│   ├── routes/
 │   ├── App.jsx
 │   └── main.jsx
 │
@@ -145,8 +260,8 @@ shopping-site/
 │   ├── models/
 │   ├── routes/
 │   ├── utils/
-│   ├── server.js
-│   └── app.js
+│   ├── app.js
+│   └── server.js
 │
 ├── README.md
 └── .gitignore
@@ -161,12 +276,12 @@ shopping-site/
 ```bash
 git clone https://github.com/sunny-raj-sah/MERN-Shopping-Site.git
 
-cd shopping-site
+cd MERN-Shopping-Site
 ```
 
 ---
 
-# Backend Setup
+# ⚙️ Backend Setup
 
 ## Navigate
 
@@ -174,13 +289,13 @@ cd shopping-site
 cd backend
 ```
 
-## Install Packages
+## Install Dependencies
 
 ```bash
 npm install
 ```
 
-## Create .env
+## Create `.env`
 
 ```env
 PORT=5000
@@ -190,35 +305,35 @@ MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
 
-## Run Backend
+## Start Backend
 
 ```bash
 npm run dev
 ```
 
-Server starts at
+Server runs on
 
-```
+```text
 http://localhost:5000
 ```
 
 ---
 
-# Frontend Setup
+# 💻 Frontend Setup
 
 ## Navigate
 
 ```bash
-cd frontend
+cd shopping-site
 ```
 
-## Install Packages
+## Install Dependencies
 
 ```bash
 npm install
 ```
 
-## Create .env
+## Create `.env`
 
 ```env
 VITE_API_URL=http://localhost:5000/api
@@ -230,9 +345,9 @@ VITE_API_URL=http://localhost:5000/api
 npm run dev
 ```
 
-Frontend starts at
+Frontend runs on
 
-```
+```text
 http://localhost:5173
 ```
 
@@ -241,12 +356,12 @@ http://localhost:5173
 # 🔑 Authentication Flow
 
 1. User Registers
-2. Password is encrypted
-3. JWT Token generated
-4. Token stored in Local Storage
-5. Every protected API request sends Authorization Header
+2. Password is encrypted using bcrypt
+3. JWT Token is generated
+4. Token is stored in Local Storage
+5. Protected API requests send the Authorization header
 
-```
+```text
 Authorization: Bearer <token>
 ```
 
@@ -256,63 +371,52 @@ Authorization: Bearer <token>
 
 ## Authentication
 
-```
-POST /api/auth/register
-
-POST /api/auth/login
-
-GET /api/auth/profile
+```http
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/auth/profile
 ```
 
 ---
 
 ## Products
 
-```
-GET /api/products
-
-GET /api/products/:id
+```http
+GET    /api/products
+GET    /api/products/:id
 ```
 
 ---
 
 ## Wishlist
 
-```
-GET /api/wishlist
-
-POST /api/wishlist/:productId
-
-DELETE /api/wishlist/:productId
+```http
+GET      /api/wishlist
+POST     /api/wishlist/:productId
+DELETE   /api/wishlist/:productId
 ```
 
 ---
 
 ## Cart
 
-```
-GET /api/cart
-
-POST /api/cart/:productId
-
-PATCH /api/cart/increase/:productId
-
-PATCH /api/cart/decrease/:productId
-
-DELETE /api/cart/:productId
+```http
+GET      /api/cart
+POST     /api/cart/:productId
+PATCH    /api/cart/increase/:productId
+PATCH    /api/cart/decrease/:productId
+DELETE   /api/cart/:productId
 ```
 
 ---
 
-# 📦 Database Collections
+# 🗄️ Database Collections
 
 ## Users
 
-```
+```text
 name
-
 email
-
 password
 ```
 
@@ -320,23 +424,16 @@ password
 
 ## Products
 
-```
+```text
 title
-
 description
-
 image
-
 category
-
+subcategory
 brand
-
 price
-
 rating
-
 stock
-
 featured
 ```
 
@@ -344,9 +441,8 @@ featured
 
 ## Wishlist
 
-```
+```text
 userId
-
 productId
 ```
 
@@ -354,155 +450,126 @@ productId
 
 ## Cart
 
-```
+```text
 userId
-
 productId
-
 quantity
 ```
 
 ---
 
-# 📱 Pages
+# 📄 Application Pages
 
-* Home
-* Products
-* Product Details
-* Wishlist
-* Cart
-* Login
-* Register
-* 404 Page
+- 🏠 Home
+- 🛍️ Products
+- 📦 Product Details
+- ❤️ Wishlist
+- 🛒 Cart
+- 📍 Address
+- 💳 Checkout
+- ✅ Order Success
+- 👤 Profile
+- 🔐 Login
+- 📝 Register
+- ❌ 404 Not Found
 
 ---
 
 # 🧠 State Management
 
-The application uses **React Context API + useReducer**.
+The application uses **React Context API + useReducer** for centralized state management.
 
-Contexts
+### Contexts
 
-* Auth Context
-* Product Context
-* Wishlist Context
-* Cart Context
-* Search Context
+- Authentication Context
+- Product Context
+- Cart Context
+- Wishlist Context
+- Search Context
+- Address Context
+- Order Context
 
 ---
 
-# 🔄 Data Flow
+# 🔄 Application Flow
 
-```
-React Component
-
-↓
-
-Context
-
-↓
-
-API
-
-↓
-
-Express
-
-↓
-
-Controller
-
-↓
-
-MongoDB
-
-↓
-
-Response
-
-↓
-
-React UI
+```text
+React Components
+        │
+        ▼
+Context API + useReducer
+        │
+        ▼
+Axios API Calls
+        │
+        ▼
+Express Routes
+        │
+        ▼
+Controllers
+        │
+        ▼
+MongoDB Database
+        │
+        ▼
+API Response
+        │
+        ▼
+React UI Updates
 ```
 
 ---
 
-# 🛡 Security
+# 🔒 Security
 
-* JWT Authentication
-* Password Hashing using bcrypt
-* Protected Routes
-* Environment Variables
-* CORS Configuration
-
----
-
-# 📈 Future Improvements
-
-* Product Reviews
-* Order Management
-* Razorpay Payment Integration
-* Stripe Integration
-* Address Management
-* Coupons
-* Admin Dashboard
-* Inventory Management
-* Product Images Upload
-* User Profile
-* Order History
-* Pagination
-* Infinite Scroll
-* Product Recommendations
-* Dark Mode
-* Email Verification
-* Forgot Password
-* Google Login
+- JWT Authentication
+- Password Hashing (bcrypt)
+- Protected Routes
+- Environment Variables
+- CORS Configuration
+- Secure API Communication
 
 ---
 
-# Pages
+# 🚀 Future Improvements
 
- 
-
-```
-Home Page
- 
-Products
-
-Product Details
-
-Wishlist
-
-Cart
-
-Login
-
-Register
-```
+- Product Reviews & Ratings
+- Coupon System
+- Razorpay Integration
+- Stripe Integration
+- Online Payments
+- Order Tracking
+- Admin Dashboard
+- Inventory Management
+- Product Image Upload
+- User Profile Editing
+- Email Verification
+- Forgot Password
+- Google Authentication
+- Pagination
+- Infinite Scrolling
+- Product Recommendations
+- Dark Mode
 
 ---
 
 # 👨‍💻 Author
 
-**Sunny Raj**
+## Sunny Raj
 
-LinkedIn
+### LinkedIn
 
-```
 https://www.linkedin.com/in/sunny-raj-885588313/
-```
 
-GitHub
+### GitHub
 
-```
 https://github.com/sunny-raj-sah
-```
 
 ---
 
 # 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -510,11 +577,11 @@ This project is licensed under the MIT License.
 
 If you found this project helpful:
 
-* ⭐ Star this repository
-* 🍴 Fork it
-* 🐛 Report Issues
-* 🚀 Contribute with Pull Requests
+- ⭐ Star this repository
+- 🍴 Fork it
+- 🐞 Report Issues
+- 🚀 Submit Pull Requests
 
 ---
 
-Made with ❤️ using the MERN Stack.
+## ❤️ Built with React, Node.js, Express, MongoDB, and Bootstrap.

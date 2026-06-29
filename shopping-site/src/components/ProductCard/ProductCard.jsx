@@ -21,10 +21,10 @@ const ProductCard = ({ product }) => {
   const handleWishlist = async () => {
     if (isWishlist) {
       await removeWishlist(product._id);
-      toast.success("Removed product from wishlist");
+      toast.success("Product removed from wishlist.");
     } else {
       await addWishlist(product._id);
-      toast.success("Added product from wishlist");
+      toast.success("Product added to wishlist.");
     }
   };
 
@@ -79,7 +79,7 @@ const ProductCard = ({ product }) => {
                 type: "ADD_TO_CART",
                 payload: product,
               });
-              toast.success("ADD_TO_CART successfully");
+              toast.success("add to cart successfully");
             }}
           >
             Add To Cart

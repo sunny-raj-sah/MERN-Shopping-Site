@@ -11,7 +11,7 @@ const WishlistCard = ({ product }) => {
 
   const removeWishlistHandler = async () => {
     await removeWishlist(product._id);
-    toast.success(" Removed product successfully");
+    toast.success("Product removed from wishlist.");
   };
   // const {
   //     dispatch: wishlistDispatch,
@@ -72,7 +72,7 @@ const WishlistCard = ({ product }) => {
                   type: "ADD_TO_CART",
                   payload: product,
                 });
-                toast.success("ADD_TO_CARTsuccessfully");
+                toast.success("add to cart successfully");
               }}
             >
               Add To Cart
