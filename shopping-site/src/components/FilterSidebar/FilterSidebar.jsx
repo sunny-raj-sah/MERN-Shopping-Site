@@ -487,7 +487,7 @@ const FilterSidebar = () => {
       <div className="d-md-none mb-3">
         <button
           type="button"
-          className="btn btn-dark w-100"
+          className="btn btn-gray "
           onClick={() => setShowFilters(!showFilters)}
         >
           {showFilters ? "✕ Close Filters" : "☰ Filters"}
